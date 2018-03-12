@@ -1,0 +1,168 @@
+/**
+ * Function to set breakpoint for responsive.
+ *
+ * @method breakpoint
+ * @param {string} point 
+ */
+@mixin breakpoint($point)
+  @if $point == large
+    @media screen and (max-width: 1200px)
+      @content
+
+  @else if $point == small
+    @media screen and (max-width: 992px)
+       @content
+
+  @else if $point == xsmall
+    @media screen and (max-width: 768px)
+      @content
+
+  @else if $point == mobile
+    @media screen and (max-width: 480px)
+      @content
+
+/**
+ * Function to vertical gradient.
+ *
+ * @method linear-gradient
+ * @param {string} top 
+ * @param {string} bottom  
+ */
+@mixin linear-gradient($top, $bottom)
+  background: $top
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%)
+  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%)
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%)
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%)
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom))
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 )
+
+/**
+ * Function to horizontal gradient.
+ *
+ * @method horizontal-gradient
+ * @param {string} left 
+ * @param {string} right  
+ */
+@mixin horizontal-gradient($left, $right)
+  background: $left
+  background: linear-gradient(to right,  $left 0%,$right 100%)
+  background: -moz-linear-gradient(left,  $left 0%, $right 100%)
+  background: -webkit-linear-gradient(left,  $left 0%,$right 100%)
+
+/**
+ * Function to set border radius
+ *
+ * @method border-radius
+ * @param {string} radius 
+ */
+@mixin border-radius($radius)
+  border-radius: $radius
+  -ms-border-radius: $radius
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+
+/**
+ * Function to set filter.
+ *
+ * @method filter
+ * @param {string} filter 
+ */
+@mixin filter($filter)
+  filter: $filter
+  -o-filter: $filter
+  -ms-filter: $filter
+  -moz-filter: $filter
+  -webkit-filter: $filter
+
+/**
+ * Function to set blur.
+ *
+ * @method blur
+ * @param {string} blur 
+ */
+@mixin blur($blur)
+  filter: blur($blur)
+  -o-filter: blur($blur)
+  -ms-filter: blur($blur)
+  -moz-filter: blur($blur)
+  -webkit-filter: blur($blur)
+
+/**
+ * Function to set gray.
+ *
+ * @method gray
+ * @param {string} gray 
+ */
+@mixin gray($gray)
+  filter: grayscale($gray)
+  -o-filter: grayscale($gray)
+  -ms-filter: grayscale($gray)
+  -moz-filter: grayscale($gray)
+  -webkit-filter: grayscale($gray)
+
+/**
+ * Function to transform.
+ *
+ * @method transform
+ * @param {string} val 
+ */
+@mixin transform($val)
+  transform: $val
+  -ms-transform: $val
+  -moz-transform: $val
+  -webkit-transform: $val
+
+/**
+ * Function to transform.
+ *
+ * @method box-shadow
+ * @param {string} val
+ * @param {string} val 
+ * @param {string} val 
+ * @param {string} val     
+ */
+@mixin box-shadow($top, $left, $blur, $color, $inset: false)
+  @if $inset == true
+    box-shadow: inset $top $left $blur $color
+    -moz-box-shadow: inset $top $left $blur $color
+    -webkit-box-shadow: inset $top $left $blur $color
+  @else
+    box-shadow: $top $left $blur $color
+    -moz-box-shadow: $top $left $blur $color
+    -webkit-box-shadow: $top $left $blur $color
+
+/**
+ * Function to shadow.
+ *
+ * @method shadow
+ * @param {string} shadow   
+ */
+@mixin shadow($shadow)
+  box-shadow: $shadow
+  -moz-box-shadow: $shadow
+  -webkit-box-shadow: $shadow
+
+/**
+ * Function to set transition.
+ *
+ * @method transition
+ * @param {string} transition 
+ */
+@mixin transition($transition...)
+  -moz-transition:    $transition
+  -o-transition:      $transition
+  -webkit-transition: $transition
+  transition:         $transition
+
+/**
+ * Function to set opacity.
+ *
+ * @method opacity
+ * @param {float} opacity 
+ */
+@mixin opacity ($opacity)
+	opacity: 	$opacity
+	-moz-opacity: 		$opacity
+	-webkit-opacity: 	$opacity
