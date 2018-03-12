@@ -2,7 +2,9 @@
 
 ### Installation
 
-Boilerplate requires [nodejs](https://nodejs.org/en/) >=v6.0 to run.
+Boilerplate requires 
+[nodejs](https://nodejs.org/en/) >=v6.0 to run.
+[yarn](https://yarnpkg.com/lang/en/)
 
 Install the dependencies and start the server.
 
