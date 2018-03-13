@@ -4,16 +4,12 @@
  * Created Date: 2018-03-12, 09:04:08
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-13, 11:27:03
+ * Last Modified: 2018-03-13, 14:08:13
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
  * =============================================================================
  */
-
-// =============================================================================
-// Loading dependencies.
-// =============================================================================
 import React from 'react';
 import 'theme/styles/main.sass';
 import { render } from 'react-dom';
@@ -27,10 +23,6 @@ render(<Routes />, document.getElementById('application'));
 serviceWorker();
 /** Launch the hot module reload function */
 setHMR();
-
-// =============================================================================
-// Additional support functions.
-// =============================================================================
 
 /**
  * Run the service workstation for the version
