@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 09:16:02
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-13, 11:10:35
+ * Last Modified: 2018-03-13, 11:46:16
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -74,7 +74,7 @@ class Client {
    */
   constructor() {
     this.create();
-    this.methods.map(method => {
+    this.methods.map((method) => {
       this[method] = (path, { data } = {}) =>
         new Promise((resolve, reject) => {
           this.request = this.instance[method](path, data);

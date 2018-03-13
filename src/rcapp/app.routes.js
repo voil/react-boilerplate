@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 09:12:09
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-13, 11:06:49
+ * Last Modified: 2018-03-13, 11:44:09
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -30,12 +30,14 @@ const store = new Reducer(new Client());
 // =============================================================================
 const routes = {
   component: app,
-  childRoutes: pages(store),
+  childRoutes: pages(store)
 };
 // =============================================================================
 // Exporting routing.
 // =============================================================================
 export default () =>
-  <Provider store={store} key="provider">
-    <Router history={browserHistory} routes={routes} />
-  </Provider>;
+  (<Provider store={store}
+    key="provider">
+    <Router history={browserHistory}
+      routes={routes} />
+  </Provider>);

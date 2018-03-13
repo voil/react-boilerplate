@@ -4,14 +4,14 @@
  * Created Date: 2018-03-12, 09:15:53
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:44
+ * Last Modified: 2018-03-13, 11:45:55
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
  * =============================================================================
  */
 
- /**
+/**
  * Generate a random hash.
  * 
  * @export
@@ -43,7 +43,7 @@ export function hash(len = 10) {
 export function createAction(types = {}, url = '', action = '', data = {}) {
   return {
     types: Object.values(types),
-    promise: client => client[action](url, {data})
+    promise: client => client[action](url, { data })
   };
 }
 
@@ -108,9 +108,9 @@ export function seconds2Time(secs = 0, addHour = false) {
  * @returns 
  */
 export function sortByKey(object = {}, key = '') {
-  return object.sort((a, b) => {
-    if(a[key] < b[key]) return -1;
-    if(a[key] > b[key]) return 1;
+  return object.sort((elementA, elementB) => {
+    if(elementA[key] < elementB[key]) return -1;
+    if(elementA[key] > elementB[key]) return 1;
     return 0;
   });
 }

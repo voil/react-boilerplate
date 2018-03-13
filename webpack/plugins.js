@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 08:49:31
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-13, 10:59:31
+ * Last Modified: 2018-03-13, 11:40:00
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -36,7 +36,7 @@ let config = {
   template: 'src/index.ejs',
   description: _description,
   favicon: 'src/theme/images/favicon.ico',
-  keywords: 'platform, application, boilerplate',
+  keywords: 'platform, application, boilerplate'
 };
 
 if (process.env.ENV === 'production') {
@@ -50,7 +50,7 @@ let plugins = [
   new HtmlWebpackPlugin(config),
   new OfflinePlugin({
     updateStrategy: 'all',
-    AppCache: false,
+    AppCache: false
   }),
   new webpack.DefinePlugin({
     __TITLE__: _title,
@@ -60,9 +60,9 @@ let plugins = [
     __DESCRIPTION__: _description,
     __DEVELOPMENT__: process.env.ENV === 'development',
     'process.env': {
-      NODE_ENV: JSON.stringify(process.env.ENV),
-    },
-  }),
+      NODE_ENV: JSON.stringify(process.env.ENV)
+    }
+  })
 ];
 
 if (process.env.ENV === 'development') {
@@ -76,7 +76,7 @@ if (process.env.ENV === 'production') {
   plugins.push(new CleanWebpackPlugin(['*'], {
     dry: false,
     verbose: true,
-    root: `${_root}/public/theme/`,
+    root: `${_root}/public/theme/`
   }));
   plugins.push(new webpack.optimize.UglifyJsPlugin({
     mangle: true,
@@ -86,12 +86,12 @@ if (process.env.ENV === 'production') {
       warnings: false,
       screw_ie8: true,
       pure_getters: true,
-      unsafe_comps: true,
+      unsafe_comps: true
     },
     output: {
-      comments: false,
+      comments: false
     },
-    exclude: [/\.min\.(js|css|less|sass)$/gi],
+    exclude: [/\.min\.(js|css|less|sass)$/gi]
   }));
   plugins.push(new webpack.optimize.OccurrenceOrderPlugin());
   plugins.push(new webpack.optimize.AggressiveMergingPlugin());
@@ -100,7 +100,7 @@ if (process.env.ENV === 'production') {
     algorithm: 'gzip',
     test: /\.(js|html|css|woff)$/,
     threshold: 10240,
-    minRatio: 0.8,
+    minRatio: 0.8
   }));
   plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }));
   plugins.push(loaders.extract);
@@ -108,7 +108,7 @@ if (process.env.ENV === 'production') {
     name: process.env.TITLE,
     short_name: process.env.TITLE,
     description: require(`${_root}/package.json`).description,
-    background_color: require(`${_root}/package.json`).color,
+    background_color: require(`${_root}/package.json`).color
     // icons: [
     //   {
     //     src: path.resolve("src/theme/images/icons/icon.png"),

@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 08:53:49
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-13, 11:00:36
+ * Last Modified: 2018-03-13, 11:40:52
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -30,22 +30,22 @@ module.exports = {
   devtool: process.env.ENV === 'production' ? 'source-map' : 'cheap-module-source-map',
   entry: {
     app: [
-      'index',
-    ],
+      'index'
+    ]
   },
   output: {
     filename: '[name].bundle.js',
     path: path.join(_root, '/public/theme/'),
-    publicPath: process.env.ENV === 'production' ? 'theme/' : '/',
+    publicPath: process.env.ENV === 'production' ? 'theme/' : '/'
   },
   module: {
-    rules: loaders.loaders,
+    rules: loaders.loaders
   },
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
       sourcePath,
-      'node_modules',
+      'node_modules'
     ],
     alias: {
       app: path.resolve(_root, 'src/rcapp/'),
@@ -55,18 +55,18 @@ module.exports = {
       images: path.resolve(_root, 'src/theme/images/'),
       helpers: path.resolve(_root, 'src/rcapp/helpers/'),
       actions: path.resolve(_root, 'src/rcapp/redux/actions'),
-      components: path.resolve(_root, 'src/rcapp/components/'),
-    },
+      components: path.resolve(_root, 'src/rcapp/components/')
+    }
   },
   plugins,
   devServer: {
     hot: true,
     port: parseInt(process.env.HOST_PORT, 0),
     stats: {
-      colors: true,
+      colors: true
     },
     contentBase: './src',
     historyApiFallback: true,
-    compress: process.env.ENV === 'production',
-  },
+    compress: process.env.ENV === 'production'
+  }
 };

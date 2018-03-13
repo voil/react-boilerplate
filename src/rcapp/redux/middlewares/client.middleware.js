@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 09:23:58
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:46
+ * Last Modified: 2018-03-13, 11:45:01
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -18,8 +18,8 @@
  * @returns 
  */
 function clientMiddleware( client = {} ){
-  return ({dispatch, getState}) => {
-    return next => action => {
+  return ({ dispatch, getState }) => {
+    return next => (action) => {
       if(typeof action == 'function'){
         return action(dispatch, getState);
       }
@@ -29,16 +29,16 @@ function clientMiddleware( client = {} ){
       }
       const [REQUEST, SUCCESS, FAILURE] = types;
 
-      next({...rest, type: REQUEST});
+      next({ ...rest, type: REQUEST });
 
       client.dispatch = dispatch;
       const actionPromise = promise(client);
       actionPromise.then(
-        (result) => next({...rest, result, type: SUCCESS}),
-        (error) => next({...rest, error, type: FAILURE})
+        result => next({ ...rest, result, type: SUCCESS }),
+        error => next({ ...rest, error, type: FAILURE })
       ).catch((error)=> {
         console.error('MIDDLEWARE ERROR:', error);
-        next({...rest, error, type: FAILURE});
+        next({ ...rest, error, type: FAILURE });
       });
 
       return actionPromise;

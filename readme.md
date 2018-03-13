@@ -32,6 +32,10 @@ Create new action:
 $ gulp action --name %name
 ```
 
+Create new dummy component:
+```sh
+$ gulp dummy --name %name
+```
 
 #### Our blogs
 

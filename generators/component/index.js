@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 09:00:52
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:33
+ * Last Modified: 2018-03-13, 12:23:15
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -14,8 +14,8 @@
 // =============================================================================
 // Loading dependencies.
 // =============================================================================
-import './style.sass';
 import React from 'react';
+import './style.sass';
 import template from './template';
 
 /**

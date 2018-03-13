@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 08:37:34
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 08:46:30
+ * Last Modified: 2018-03-13, 12:25:31
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -14,7 +14,6 @@
 //==============================================================================
 // Loading dependencies.
 //==============================================================================
-const fs = require('fs');
 const gulp = require('gulp');
 const path = require('path');
 const yargs = require('yargs');
@@ -32,8 +31,7 @@ let root = './src';
 // =============================================================================
 // Create new component.
 gulp.task('component',() => {
-  let { name, destPath, type } = prepareParams( yargs , 'rcapp/components' );
-  const parent = destPath.split('\\')[3];
+  let { name, destPath } = prepareParams( yargs , 'rcapp/components' );
   return startTask(setPath(`component`), name, destPath);
 });
 
@@ -49,6 +47,13 @@ gulp.task('action',() => {
 gulp.task('route',() => {
   let { name, destPath } = prepareParams( yargs , 'rcapp/routes' );
   return startTask(setPath('route'), name, destPath);
+});
+
+// Create new dummy.
+// =============================================================================
+gulp.task('dummy',() => {
+  let { name, destPath } = prepareParams( yargs , 'rcapp/components' );
+  return startTask(setPath('dummy'), name, destPath);
 });
 //==============================================================================
 
@@ -103,16 +108,16 @@ function startTask(paths = {}, name = '', destPath = '', type = ''){
       dateNow : moment().format('YYYY-MM-DD, HH:mm:ss')
     }))
     .pipe(rename((path) => {
-        path.basename = path.basename.replace('temp', name);
+      path.basename = path.basename.replace('temp', name);
     }))
     .pipe(gulp.dest(destPath)) :
     gulp.src(paths.blankTemplates)
-        .pipe(template({
-          name: name,
-          upCaseName: capitalize(name),
-          dateNow : moment().format('YYYY-MM-DD, HH:mm:ss')
-        }))
-        .pipe(gulp.dest(destPath)) ;
+      .pipe(template({
+        name: name,
+        upCaseName: capitalize(name),
+        dateNow : moment().format('YYYY-MM-DD, HH:mm:ss')
+      }))
+      .pipe(gulp.dest(destPath)) ;
 }
 
 /**
@@ -131,7 +136,7 @@ function prepareParams(yargs = {}, dest = '', typeAction = ''){
   dest = path.join(dest, destPathMain);
 
   const destPath = typeAction === 'actions'? 
-      path.join(resolveToPath(dest), parentPath) : 
-      path.join(resolveToPath(dest), parentPath, name);
+    path.join(resolveToPath(dest), parentPath) : 
+    path.join(resolveToPath(dest), parentPath, name);
   return { name, destPath, type };
 }
