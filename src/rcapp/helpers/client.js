@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 09:16:02
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:43
+ * Last Modified: 2018-03-13, 11:10:35
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -75,12 +75,12 @@ class Client {
   constructor() {
     this.create();
     this.methods.map(method => {
-      this[method] = (path, { params, data } = {}) =>
+      this[method] = (path, { data } = {}) =>
         new Promise((resolve, reject) => {
           this.request = this.instance[method](path, data);
           this.request
             .then(response => this.responseSuccess(response, resolve))
-            .catch(error => this.responseError(reject));
+            .catch(() => this.responseError(reject));
         });
     });
   }
@@ -102,7 +102,7 @@ class Client {
    * @param {any} [reject={}] 
    * @memberof Client
    */
-  responseSuccess(response = {}, resolve = {}, reject = {}) {
+  responseSuccess(response = {}, resolve = {}) {
     resolve(response.data.data);
   }
 

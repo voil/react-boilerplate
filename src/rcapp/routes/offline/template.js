@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 09:28:57
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:51
+ * Last Modified: 2018-03-13, 11:09:22
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -19,7 +19,7 @@ import React from "react";
 // =============================================================================
 // Export the template.
 // =============================================================================
-export default component =>
+export default () =>
   <div className="animated fadeIn">
     offline
   </div>

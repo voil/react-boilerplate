@@ -6,7 +6,7 @@
  * Co-autor: Sebastian Drzewicki <sebastian.drzewicki@webonweb.pl>
  * Project Manager: Maciej Zasadzki <maciej.zasadzki@webonweb.pl>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:53
+ * Last Modified: 2018-03-13, 11:09:14
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -21,7 +21,7 @@ import React from "react";
 // =============================================================================
 // Export the template.
 // =============================================================================
-export default component => 
+export default () => 
   <div>
     not found
   </div>

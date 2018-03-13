@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 08:53:49
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:54
+ * Last Modified: 2018-03-13, 11:00:36
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -55,7 +55,7 @@ module.exports = {
       images: path.resolve(_root, 'src/theme/images/'),
       helpers: path.resolve(_root, 'src/rcapp/helpers/'),
       actions: path.resolve(_root, 'src/rcapp/redux/actions'),
-      components: path.resolve(_root, 'src/rcapp/components/')
+      components: path.resolve(_root, 'src/rcapp/components/'),
     },
   },
   plugins,

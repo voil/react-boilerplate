@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "env": {
+      "es6": true,
+      "node": true
+  },
+  "rules" : { 
+    "max-len": [1, 120, 2, {"ignoreComments": true}],
+    "linebreak-style": 0,
+    "no-undef": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle" : "off",
+    "prefer-const": "off",
+    "import/extensions": "off",
+    "global-require": "off",
+    "react/display-name": "off",
+    "no-use-before-define": "off",
+    "import/no-unresolved" : "off",
+    "import/no-dynamic-require": "off",
+    "allowImportExportEverywhere": 0,
+    "import/no-dynamic-import": "off",
+    "func-names": "off",
+    "no-console": "off"
+  },
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended", 
+    "plugin:react/recommended"
+  ]
+}

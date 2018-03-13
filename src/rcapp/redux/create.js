@@ -4,7 +4,7 @@
  * Created Date: 2018-03-12, 09:21:37
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-03-12, 09:53:44
+ * Last Modified: 2018-03-13, 11:09:32
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -14,8 +14,8 @@
 // =============================================================================
 // Loading dependencies.
 // =============================================================================
-import reducer from "./actions/reducer";
 import { createStore, applyMiddleware, compose } from "redux";
+import reducer from "./actions/reducer";
 import createMiddleware from "./middlewares/client.middleware";
 
 /**
