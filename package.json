@@ -7,7 +7,26 @@
     "start": "concurrent --kill-others \"npm run start-dev\"",
     "start-dev": "better-npm-run start-dev",
     "build": "concurrent --kill-others \"npm run start-prod\"",
-    "start-prod": "better-npm-run start-prod"
+    "start-prod": "better-npm-run start-prod",
+    "test": "jest",
+    "test:dev": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    },
+    "testRegex": "\\.spec\\.js$",
+    "setupFiles": [
+      "./__tests__/setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      ".js": "./node_modules/babel-jest"
+    }
   },
   "betterScripts": {
     "start-dev": {
@@ -71,25 +90,30 @@
     "bump-webpack-plugin": "^0.1.0",
     "clean-webpack-plugin": "^0.1.13",
     "compression-webpack-plugin": "^0.4.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
     "es6-enum": "^1.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "2.1.0",
     "html-webpack-plugin": "^2.24.1",
+    "jest": "^22.4.2",
     "offline-plugin": "^4.8.3",
     "prop-types": "^15.6.1",
-    "react": "15.4.2",
+    "react": "16.2.0",
     "react-detect-offline": "^1.0.4",
-    "react-dom": "15.4.2",
+    "react-dom": "16.2.0",
     "react-fa": "^4.2.0",
     "react-favicon": "^0.0.9",
     "react-joyride": "^1.10.1",
     "react-redux": "^5.0.6",
     "react-redux-i18n": "^1.9.0",
     "react-responsive": "^4.0.4",
-    "react-router": "2.8.0",
+    "react-router": "3.2.0",
     "react-router-redux": "^4.0.7",
+    "react-test-renderer": "16.2.0",
     "redux": "^3.6.0",
     "traits-decorator": "^1.0.1",
     "uuid": "^3.1.0",

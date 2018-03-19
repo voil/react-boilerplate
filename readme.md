@@ -37,6 +37,21 @@ Create new dummy component:
 $ gulp dummy --name %name
 ```
 
+Start tests for components:
+```sh
+$ yarn test
+```
+
+Start watch tests for components:
+```sh
+$ yarn test:dev
+```
+
+Start tests coverage:
+```sh
+$ yarn test:coverage
+```
+
 #### Our blogs
 
 See [Meanstack.eu - voil](http://meanstack.eu/)
